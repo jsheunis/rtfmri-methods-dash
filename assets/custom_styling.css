@@ -1,0 +1,22 @@
+.qcsummary {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  /*width: 90%;*/
+}
+
+.qcsummary td, .qcsummary th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.qcsummary tr:nth-child(even){background-color: #f2f2f2;}
+
+.qcsummary tr:hover {background-color: #ddd;}
+
+.qcsummary th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
