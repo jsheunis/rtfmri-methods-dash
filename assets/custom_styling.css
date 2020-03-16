@@ -1,12 +1,16 @@
 .qcsummary {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
   border-collapse: collapse;
-  /*width: 90%;*/
+  width: 90%;
+  font-size: 12px;
+  /*table-layout: fixed;*/
 }
 
-.qcsummary td, .qcsummary th {
+.qcsummary td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 4px;
+  max-width: 150px;
+  min-width: 60px;
 }
 
 .qcsummary tr:nth-child(even){background-color: #f2f2f2;}
@@ -14,9 +18,29 @@
 .qcsummary tr:hover {background-color: #ddd;}
 
 .qcsummary th {
+  border: 1px solid #ddd;
+  padding: 4px;
+  max-width: 150px;
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
+  text-align: center;
+  background-color: #586F7C;  /*#4CAF50;*/
   color: white;
+}
+
+.qcsummary tr td:last-child {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 120px;
+}
+
+.table-row{
+cursor:pointer;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
 }
