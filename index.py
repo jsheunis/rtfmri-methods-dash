@@ -8,8 +8,8 @@ from pages import home, page1, page2, page3
 import flask
 
 
-nav_item1 = dbc.NavItem(dbc.NavLink("Browse", href="/pages/page1/"))
-nav_item2 = dbc.NavItem(dbc.NavLink("Visualize", href="/pages/page2/"))
+nav_item1 = dbc.NavItem(dbc.NavLink("Browse", href="/pages/page1"))
+nav_item2 = dbc.NavItem(dbc.NavLink("Visualize", href="/pages/page2"))
 nav_item3 = dbc.NavItem(dbc.NavLink("Submit", href="/"))
 
 nav_bar_and_content_div = html.Div(children=[
@@ -85,9 +85,9 @@ def toggle_navbar_collapse(n, is_open): # we use a callback to toggle the collap
 def display_page(pathname):
     if pathname == '/':
         return home.layout
-    elif pathname == '/pages/page1/':
+    elif pathname == '/pages/page1':
         return page1.layout
-    elif pathname == '/pages/page2/':
+    elif pathname == '/pages/page2':
         return page2.layout
     else:
         return '404'
