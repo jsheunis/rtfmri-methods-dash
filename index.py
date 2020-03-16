@@ -90,10 +90,10 @@ def display_page(pathname):
         return [home.layout, logo_url]
     elif pathname == '/pages/page1':
         logo_url = '../assets/logo_jsheunis_3.jpeg'
-        return [home.layout, logo_url]
+        return [page1.layout, logo_url]
     elif pathname == '/pages/page2':
         logo_url = '../assets/logo_jsheunis_3.jpeg'
-        return [home.layout, logo_url]
+        return [page2.layout, logo_url]
     else:
         return '404'
 
