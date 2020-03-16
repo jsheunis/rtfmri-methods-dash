@@ -21,7 +21,7 @@ nav_bar_and_content_div = html.Div(children=[
                     # Use row and col to control vertical alignment of logo / brand
                     dbc.Row(
                         [
-                            dbc.Col(html.Img(src='assets/logo_jsheunis_3.jpeg', height="30px", className="avatar")),
+                            dbc.Col(html.Img(id='logo', src='assets/logo_jsheunis_3.jpeg', height="30px", className="avatar")),
                             dbc.Col(dbc.NavbarBrand("rtfMRI Methods", className="ml-2")),
                         ],
                         align="center",
@@ -80,15 +80,20 @@ def toggle_navbar_collapse(n, is_open): # we use a callback to toggle the collap
     return is_open
 
 
-@app.callback(Output('page-content', 'children'),
-              [Input('url', 'pathname')])
+@app.callback(
+    [Output('page-content', 'children'),
+     Output('logo', 'src')],
+    [Input('url', 'pathname')])
 def display_page(pathname):
     if pathname == '/':
-        return home.layout
+        logo_url = 'assets/logo_jsheunis_3.jpeg'
+        return [home.layout, logo_url]
     elif pathname == '/pages/page1':
-        return page1.layout
+        logo_url = '../assets/logo_jsheunis_3.jpeg'
+        return [home.layout, logo_url]
     elif pathname == '/pages/page2':
-        return page2.layout
+        logo_url = '../assets/logo_jsheunis_3.jpeg'
+        return [home.layout, logo_url]
     else:
         return '404'
 
