@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 import dash_core_components as dcc
 import dash_html_components as html
-import dash_bootstrap_components as dbc
 import dash_table
-from dash.dependencies import Input, Output, State
-from dash.exceptions import PreventUpdate
+from dash.dependencies import Input, Output
 import pandas as pd
 import numpy as np
 from app import app

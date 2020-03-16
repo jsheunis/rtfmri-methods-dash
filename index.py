@@ -3,7 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
-from app import app
+from app import app, server
 from pages import home, page1, page2, page3
 
 
@@ -11,7 +11,7 @@ from pages import home, page1, page2, page3
 nav_item1 = dbc.NavItem(dbc.NavLink("Browse", href="/pages/page1"))
 nav_item2 = dbc.NavItem(dbc.NavLink("Visualize", href="/pages/page2"))
 nav_item3 = dbc.NavItem(dbc.NavLink("Submit", href="#"))
-
+server
 
 
 app.layout = html.Div(children=[
