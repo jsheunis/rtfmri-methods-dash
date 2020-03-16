@@ -8,9 +8,9 @@ from pages import home, page1, page2, page3
 import flask
 
 
-nav_item1 = dbc.NavItem(dbc.NavLink("Browse", href="/pages/page1"))
-nav_item2 = dbc.NavItem(dbc.NavLink("Visualize", href="/pages/page2"))
-nav_item3 = dbc.NavItem(dbc.NavLink("Submit", href="/"))
+nav_item1 = dbc.NavItem(dbc.NavLink("Browse", href="/pages/page1", external_link=True))
+nav_item2 = dbc.NavItem(dbc.NavLink("Visualize", href="/pages/page2", external_link=True))
+nav_item3 = dbc.NavItem(dbc.NavLink("Submit", href="/", external_link=True))
 
 nav_bar_and_content_div = html.Div(children=[
     dcc.Location(id='url', refresh=False),

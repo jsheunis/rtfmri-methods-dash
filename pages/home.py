@@ -10,7 +10,7 @@ card_browse = [
                 "This site contains a list of 128 recent studies in the field of real-time fMRI neurofeedback. Their methods were coded into a common structure, and this site allows you to explore these methods.",
                 className="card-text",
             ),
-            dbc.Button("Browse now", color="light", href="/pages/page1"),
+            dbc.Button("Browse now", color="light", href="/pages/page1", external_link=True),
         ]
     ),
 ]
@@ -23,7 +23,7 @@ card_visualize = [
                 "Want to see which methods are the most popular? Or how many studies reported implementing your favorite preprocessing step? Here you can view and interact with plots of the data.",
                 className="card-text",
             ),
-            dbc.Button("Visualize now", color="light", href="/pages/page2"),
+            dbc.Button("Visualize now", color="light", href="/pages/page2", external_link=True),
         ]
     ),
 ]
@@ -36,7 +36,7 @@ card_submit = [
                 "Have you conducted and reported a real-time fMRI study? Head to the submit page to report your methods. This functionality will allow you to create a machine readable methods section for you paper (tbc)",
                 className="card-text",
             ),
-            dbc.Button("Submit now", color="light", href="/pages/page3"),
+            dbc.Button("Submit now", color="light", href="/", external_link=True),
         ]
     ),
 ]
