@@ -5,16 +5,14 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 from app import app, server
 from pages import home, page1, page2, page3
-
+import flask
 
 
 nav_item1 = dbc.NavItem(dbc.NavLink("Browse", href="/pages/page1"))
 nav_item2 = dbc.NavItem(dbc.NavLink("Visualize", href="/pages/page2"))
 nav_item3 = dbc.NavItem(dbc.NavLink("Submit", href="#"))
-server
 
-
-app.layout = html.Div(children=[
+nav_bar_and_content_div = html.Div(children=[
     dcc.Location(id='url', refresh=False),
     dbc.Navbar(
         dbc.Container(
@@ -50,6 +48,19 @@ app.layout = html.Div(children=[
     ]
 
 )
+
+def serve_layout():
+    if flask.has_request_context():
+        return nav_bar_and_content_div
+    return html.Div([
+        nav_bar_and_content_div,
+        home.layout,
+        page1.layout,
+        page2.layout,
+    ])
+
+
+app.layout = serve_layout
 
 
 
