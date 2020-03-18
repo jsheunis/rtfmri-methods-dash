@@ -56,17 +56,40 @@ srs2 = dataframe['magnet'].value_counts()
 xx2 = srs2.index.to_list()
 yy2 = srs2.values
 
+
+main_md = dcc.Markdown('''
+
+In this section you can visualize and interact with the coded data from 128 real-tme fMRI neurofeedback studies.
+There are two plots below, for which you can display data of a method selected from the respective dropdowns.
+
+Say you want to view the distribution of scanner vendors used in these studies, select the `Vendor` option for the plot on the left hand side.
+You can then *hover* over each of the bars in the plot to see the actual number of studies per vendor, e.g. 18 studies used a Philips scanner.
+You can also *click* on the bar to display these specific studies in a table below the plots.
+
+Say, now, that you want to see which software packages were used for each of the vendors, select the `Software` option for the plot on the right hand side.
+By hovering over each bar on the `Vendor` plot, the `Software` plot will update with the relevant distribution.       
+
+''')
+
 layout = html.Div([
             html.Div([
-                html.H3('Select study feature(s):'),
+                html.H2('Visualize'),
                 ],
                 style={
-                    'marginBottom': 10,
+                    'marginBottom': 25,
                     'marginTop': 25,
                     'marginLeft': '5%',
-                    'textAlign': 'left'
+                    'maxWidth': '90%',
+                    'textAlign': 'center'
                 }
             ),
+            html.Div(main_md,
+                style={
+                    'marginLeft': '5%',
+                    'maxWidth': '90%',
+                }
+            ),
+            html.Br([]),
             html.Div(
                 [
                     dbc.Row(
@@ -75,26 +98,20 @@ layout = html.Div([
                                 id='drop-1',
                                 options=plotnames,
                                 value='vendor',
-                                style={
-                                    'marginBottom': 20,
-                                    'marginTop': 0,
-                                    'width': '60%',
-                                },
-                            ),),
+                                ),
+                                width={"size": 2, "offset": 2}, # figure out offset
+                            ),
                             dbc.Col(dcc.Dropdown(
                                 id='drop-2',
                                 options=plotnames,
                                 value='vendor',
-                                style={
-                                    'marginBottom': 20,
-                                    'marginTop': 0,
-                                    'width': '60%',
-                                },
-                            )
+                                ),
+                                width={"size": 2, "offset": 4},
                             ),
                         ],
-                        justify="end"
+                        justify="start"
                     ),
+                    html.Br([]),
                     dbc.Row(
                         [
                             dbc.Col(html.H6(

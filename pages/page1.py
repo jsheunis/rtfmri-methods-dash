@@ -54,13 +54,43 @@ for index, row in df_studies.iterrows():
     row['doi'] = doi_link
 
 
+
+main_md = dcc.Markdown('''
+
+The table below contains a list of 128 real-time fMRI neurofeedback studies coded for standard quality control and denoising processing steps.
+This section allows you to filter through these studies to find what you are looking for. You can click on the `DOI` link to view the article online.
+For more background and information on how this coded data were generated,see the [preprint](https://osf.io/xubhq/)
+and [Github repository]((https://github.com/jsheunis/quality-and-denoising-in-rtfmri-nf)) of this work.    
+
+''')
+
+
 layout = html.Div([
+            html.Div(
+                html.H2('Browse'),
+                style={
+                    'marginBottom': 25,
+                    'marginTop': 25,
+                    'marginLeft': '5%',
+                    'maxWidth': '90%',
+                    'textAlign': 'center'
+                }
+            ),
+            html.Div(
+                main_md,
+                style={
+                    'marginLeft': '5%',
+                    'maxWidth': '90%',
+                }
+            ),
+            html.Br([]),
             html.Div([
-                html.H3('Search'),
                 dcc.Input(id='my-id', value='', type='text',
+                    placeholder='Enter a search term...',
                     style={
                         'marginBottom': 0,
                         'marginTop': 0,
+                        'width': '40%',
                     }
                 )],
                 style={

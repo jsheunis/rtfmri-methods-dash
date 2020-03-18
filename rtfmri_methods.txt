@@ -1,0 +1,1 @@
+{"vendor": null, "magnet": null, "software": null, "stc": null, "mc": null, "ss": null, "dr": null, "hmp": null, "ts": null, "ff": null, "or": null, "droi": null, "resp": []}

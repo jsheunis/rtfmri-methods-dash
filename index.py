@@ -10,7 +10,7 @@ import flask
 
 nav_item1 = dbc.NavItem(dbc.NavLink("Browse", href="/pages/page1", external_link=True))
 nav_item2 = dbc.NavItem(dbc.NavLink("Visualize", href="/pages/page2", external_link=True))
-nav_item3 = dbc.NavItem(dbc.NavLink("Submit", href="/", external_link=True))
+nav_item3 = dbc.NavItem(dbc.NavLink("Submit", href="/pages/page3", external_link=True))
 
 nav_bar_and_content_div = html.Div(children=[
     dcc.Location(id='url', refresh=False),
@@ -57,6 +57,7 @@ def serve_layout():
         home.layout,
         page1.layout,
         page2.layout,
+        page3.layout,
     ])
 
 
@@ -94,6 +95,9 @@ def display_page(pathname):
     elif pathname == '/pages/page2':
         logo_url = '../assets/logo_jsheunis_3.jpeg'
         return [page2.layout, logo_url]
+    elif pathname == '/pages/page3':
+        logo_url = '../assets/logo_jsheunis_3.jpeg'
+        return [page3.layout, logo_url]
     else:
         return '404'
 
