@@ -22,7 +22,7 @@ nav_bar_and_content_div = html.Div(children=[
                     # Use row and col to control vertical alignment of logo / brand
                     dbc.Row(
                         [
-                            dbc.Col(html.Img(id='logo', src='assets/logo_jsheunis_3.jpeg', height="30px", className="avatar")),
+                            dbc.Col(html.Img(id='logo', src='assets/logo_jsheunis_3.jpeg', height="32px", className="avatar")),
                             dbc.Col(dbc.NavbarBrand("rtfMRI Methods", className="ml-2")),
                         ],
                         align="center",

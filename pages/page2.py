@@ -8,7 +8,7 @@ import pandas as pd
 from app import app
 
 # Get data
-filename = 'assets/rtfMRI_methods_review_included_studies_procsteps_DEFAULTS.txt'
+filename = 'assets/rtfMRI_methods_review_included_studies_procsteps.txt'
 df_studies = pd.read_csv(filename, sep='\t', lineterminator='\r')
 df_studies = df_studies.dropna(axis='columns')
 df_plot = df_studies.copy()
