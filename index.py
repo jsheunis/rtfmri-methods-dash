@@ -4,13 +4,14 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 from app import app, server
-from pages import home, page1, page2, page3
+from pages import home, page1, page2, page3, page4
 import flask
 
 
 nav_item1 = dbc.NavItem(dbc.NavLink("Browse", href="/pages/page1", external_link=True))
 nav_item2 = dbc.NavItem(dbc.NavLink("Visualize", href="/pages/page2", external_link=True))
 nav_item3 = dbc.NavItem(dbc.NavLink("Submit", href="/pages/page3", external_link=True))
+nav_item4 = dbc.NavItem(dbc.NavLink("About", href="/pages/page4", external_link=True))
 
 nav_bar_and_content_div = html.Div(children=[
     dcc.Location(id='url', refresh=False),
@@ -32,7 +33,7 @@ nav_bar_and_content_div = html.Div(children=[
                 dbc.NavbarToggler(id="navbar-toggler"),
                 dbc.Collapse(
                     dbc.Nav(
-                        [nav_item1, nav_item2, nav_item3], className="ml-auto", navbar=True
+                        [nav_item1, nav_item2, nav_item3, nav_item4], className="ml-auto", navbar=True
                     ),
                     id="navbar-collapse",
                     navbar=True,
@@ -58,6 +59,7 @@ def serve_layout():
         page1.layout,
         page2.layout,
         page3.layout,
+        page4.layout,
     ])
 
 
@@ -98,6 +100,9 @@ def display_page(pathname):
     elif pathname == '/pages/page3':
         logo_url = '../assets/logo_jsheunis_3.jpeg'
         return [page3.layout, logo_url]
+    elif pathname == '/pages/page4':
+        logo_url = '../assets/logo_jsheunis_3.jpeg'
+        return [page4.layout, logo_url]
     else:
         return '404'
 
