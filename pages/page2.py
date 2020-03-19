@@ -99,14 +99,14 @@ layout = html.Div([
                                 options=plotnames,
                                 value='vendor',
                                 ),
-                                width={"size": 2, "offset": 2}, # figure out offset
+                                width={"size": 4, "offset": 1}, # figure out offset
                             ),
                             dbc.Col(dcc.Dropdown(
                                 id='drop-2',
                                 options=plotnames,
                                 value='vendor',
                                 ),
-                                width={"size": 2, "offset": 4},
+                                width={"size": 4, "offset": 2},
                             ),
                         ],
                         justify="start"

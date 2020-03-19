@@ -33,7 +33,7 @@ card_submit = [
         [
             html.H5("Submit", className="card-title"),
             html.P(
-                "Have you conducted and reported a real-time fMRI study? Head to the submit page to report your methods. This functionality will allow you to create a machine readable methods summary and a human readable methods section for your article.",
+                "Have you conducted a real-time fMRI study? Head to the submit page to report your methods. This will create a machine readable methods summary and a human readable methods section for your article.",
                 className="card-text",
             ),
             dbc.Button("Submit now", color="light", href="/pages/page3", external_link=True),
